@@ -110,11 +110,11 @@ export default function Projects() {
 
                     <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start gap-4 pt-6 p-10 text-justify before:absolute before:top-0 before:translate-y-[25px] before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[40px] after:left-4 after:w-[2px] sm:after:h-[95%] after:min-h-[96%] after:bg-blue-200">
 
-                        <p className="transition-all duration-500 flex justify-start items-center gap-2">
+                        <p className="transition-all duration-500 grid grid-cols-1 sm:flex justify-start items-center gap-2">
                             <span className="w-full flex justify-center items-center gap-2">
                                 <FaRProject className="text-xl" /> Nom du projet :
-                            </span>
-                            <span className="text-blue-200 font-bold text-lg">GES_SALLES</span>
+                            </span> 
+                            <span className="w-full text-blue-200 font-bold text-lg translate-x-7 sm:translate-x-0">GES_SALLES</span>
                         </p>
                         <div>
                             <span className="flex justify-start items-center gap-2">
@@ -226,11 +226,11 @@ export default function Projects() {
 
                     <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start gap-4 pt-6 p-10 text-justify before:absolute before:top-0 before:translate-y-[25px] before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[40px] after:left-4 after:w-[2px] sm:after:h-[95%] after:min-h-[96%] after:bg-blue-200">
 
-                        <p className="transition-all duration-500 flex justify-start items-center gap-2">
-                            <span className="w-full flex justify-center items-center gap-2">
+                        <p className="transition-all duration-500 grid grid-cols-1 sm:flex justify-start items-center gap-2">
+                            <span className="w-full flex justify-center items-center sm:gap-2 gap-1 text-nowrap">
                                 <FaRProject className="text-xl" /> Nom du projet :
                             </span>
-                            <span className="text-blue-200 font-bold text-lg">GES_LOCATION</span>
+                            <span className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0">GES_LOCATION</span>
                         </p>
                         <div>
                             <span className="flex justify-start items-center gap-2">
@@ -297,11 +297,11 @@ export default function Projects() {
 
                     <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start gap-4 pt-6 p-10 text-justify before:absolute before:top-0 before:translate-y-[25px] before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[40px] after:left-4 after:w-[2px] sm:after:h-[95%] after:min-h-[96%] after:bg-blue-200">
 
-                        <p className="transition-all duration-500 flex justify-start items-center gap-2">
+                        <p className="transition-all duration-500 grid grid-cols-1 sm:flex justify-start items-center gap-2">
                             <span className="w-full flex justify-center items-center gap-2">
                                 <FaRProject className="text-xl" /> Nom du projet :
                             </span>
-                            <span className="text-nowrap text-blue-200 font-bold text-lg">E-commerce</span>
+                            <span className="text-nowrap text-blue-200 font-bold text-lg translate-x-7 sm:trnalste-x-0">E-commerce</span>
                         </p>
                         <div>
                             <span className="flex justify-start items-center gap-2">

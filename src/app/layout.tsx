@@ -25,11 +25,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  console.groupCollapsed("Dev infos");
-  console.log("Name: Youmbi Le-duc");
-  console.log("Email: youmschoco@gmail.com | youmsc.co@gmail.com");
-  console.groupEnd();
-
 
   return (
     <html lang="fr">

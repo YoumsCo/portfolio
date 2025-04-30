@@ -67,6 +67,11 @@ export default function Page() {
     });
   }
 
+  console.groupCollapsed("Dev infos");
+  console.log("Name: Youmbi Le-duc");
+  console.log("Email: youmschoco@gmail.com | youmsc.co@gmail.com");
+  console.groupEnd();
+
   return (
     <Container>
       <Nav />
