@@ -4,9 +4,10 @@ import { Container } from "#/components/container";
 import { Footer } from "#/components/footer";
 import { Nav } from "#/components/nav";
 import { Title } from "#/components/title";
+import clsx from "clsx";
 import Image from "next/image";
-import { useRef } from "react";
-import { FaInfoCircle, FaRProject } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { FaChevronCircleUp, FaInfoCircle, FaRProject } from "react-icons/fa";
 import { FaImages } from "react-icons/fa6";
 
 export default function Projects() {
@@ -14,6 +15,8 @@ export default function Projects() {
     const laravelRef = useRef<HTMLHeadingElement | null>(null);
     const nextRef = useRef<HTMLHeadingElement | null>(null);
     const phpRef = useRef<HTMLHeadingElement | null>(null);
+    const [position, setPosition] = useState<number>(0);
+    const [windowHeight, setWindowHeight] = useState<number>(0);
 
     const scrollToLaravelTitle = () => {
         window.scrollTo({
@@ -34,6 +37,21 @@ export default function Projects() {
     const scrollToPHPTitle = () => {
         window.scrollTo({
             top: phpRef.current ? phpRef.current?.getBoundingClientRect().top + window.scrollY : 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", function () {
+            setPosition(window.scrollY);
+        });
+
+        setWindowHeight(window.innerHeight);
+    }, []);
+
+    const scrollTop = () => {
+        window.scrollTo({
+            top: 0,
             left: 0,
             behavior: "smooth"
         });
@@ -113,7 +131,7 @@ export default function Projects() {
                         <p className="transition-all duration-500 grid grid-cols-1 sm:flex justify-start items-center gap-2">
                             <span className="w-full flex justify-center items-center gap-2">
                                 <FaRProject className="text-xl" /> Nom du projet :
-                            </span> 
+                            </span>
                             <span className="w-full text-blue-200 font-bold text-lg translate-x-7 sm:translate-x-0">GES_SALLES</span>
                         </p>
                         <div>
@@ -400,6 +418,16 @@ export default function Projects() {
                 </div>
 
             </div>
+
+            <span
+                className={clsx(
+                    "transition-all duration-500 fixed right-4 bottom-28 text-4xl hover:scale-110 hover:opacity-100 active:scale-90 cursor-pointer z-10",
+                    position >= windowHeight ? "opacity-50" : "opacity-0"
+                )}
+                onClick={() => scrollTop()}
+            >
+                <FaChevronCircleUp className="w-full" />
+            </span>
 
             <Footer action={
                 {

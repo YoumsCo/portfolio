@@ -54,11 +54,6 @@ export default function Page() {
     setWindowHeight(window.innerHeight);
   }, []);
 
-  // const router = useRouter();
-  // const log = () => {
-  //   console.log(router.route);
-  // }
-
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -75,7 +70,6 @@ export default function Page() {
   return (
     <Container>
       <Nav />
-      {/* <button type="button" onClick={() => log()}>Clique</button> */}
 
       <div className={
         clsx(
@@ -298,8 +292,8 @@ export default function Page() {
 
       <span
         className={clsx(
-          "transition-all duration-500 fixed right-4 bottom-28 text-4xl hover:scale-110 active:scale-90 cursor-pointer z-10",
-          position >= windowHeight ? "opacity-100" : "opacity-0"
+          "transition-all duration-500 fixed right-4 bottom-28 text-4xl hover:scale-110 hover:opacity-100 active:scale-90 cursor-pointer z-10",
+          position >= windowHeight ? "opacity-50" : "opacity-0"
         )}
         onClick={() => scrollTop()}
       >
