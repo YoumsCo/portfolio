@@ -30,7 +30,7 @@ export const Nav = () => {
                 </span>
             </div>
             <div className="transition-all duration-500 sm:hidden w-[50px] h-[50px] relative rounded-full cursor-pointer" onClick={() => router.push("/")}>
-                <Image src="/img/logo-1.jpg" alt="Logo" fill objectPosition="center" className="rounded-full"></Image>
+                <Image src="/img/logo.jpg" alt="Logo" fill objectPosition="center" className="rounded-full"></Image>
             </div>
 
             <div className="transition-all duration-500 relative flex justify-center items-center gap-6 pr-10">
@@ -79,7 +79,7 @@ export const Nav = () => {
                     />
                 </span> */}
 
-                <Image src="/Logos/logo-2.jpg" alt="Logo" width={60} height={60} objectPosition="center" className="hidden sm:block w-12 h-12 rounded-full cursor-pointer" onClick={() => router.push("/")} />
+                <Image src="/img/logo.jpg" alt="Logo" width={60} height={60} objectPosition="center" className="hidden sm:block w-12 h-12 rounded-full cursor-pointer" onClick={() => router.push("/")} />
             </div>
         </Container>
     );

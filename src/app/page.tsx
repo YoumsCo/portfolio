@@ -62,6 +62,14 @@ export default function Page() {
     });
   }
 
+  const scrollToPropos = () => {
+    window.scrollTo({
+      top: propos.current ? propos.current?.getBoundingClientRect().top + window.scrollY - 40 : 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
   console.groupCollapsed("Dev infos");
   console.log("Name: Youmbi Le-duc");
   console.log("Email: youmschoco@gmail.com | youmsc.co@gmail.com");
@@ -97,7 +105,7 @@ export default function Page() {
             Je suis un développeur full stack passionné par la création d&rsquo;applications web. J&rsquo;ai une solide expérience dans le développement d&rsquo;applications front-end et back-end, ainsi que dans la conception de bases de données. Je suis toujours à la recherche de nouveaux défis et d&rsquo;opportunités pour apprendre et grandir en tant que développeur.
           </p>
 
-          <Button action={() => window.scrollTo({ top: window.innerHeight, left: 0, behavior: "smooth" })}>
+          <Button action={() => scrollToPropos()}>
             <FaPlus />&nbsp;Plus à propos de moi
           </Button>
 
@@ -166,13 +174,13 @@ export default function Page() {
                   </span>
                 </li>
                 <li className="transition-all duration-500 relative w-full before:absolute before:-bottom-2 before:left-0 before:w-full before:h-1 before:bg-gray-500/40">
-                  Satut : <span className="text-blue-200">Full stack</span>
+                  Statut : <span className="text-blue-200">Full stack</span>
                 </li>
               </ul>
             </div>
 
             <Link
-              href={clsx("http://wa.me/+237690552385?text=", hour >= 16 ? "Bonsoir" : "Bonjoir", " monsieur Le-duc. Je viens de visiter votre protfolio et j'aimerais discuter avec vous !")} className="transition-all duration-500 relative w-2/3 h-[50px] bg-transparent mt-2 text-blue-200 border-b-2 border-blue-200 rounded-xl flex justify-center items-center flex-nowrap hover:shadow-sm hover:shadow-blue-200 active:scale-90 before:transition-all before:duration-500 before:absolute before:top-0 before:left-1/2 before:border-t-2 before:border-blue-200 before:rounded-xl before:w-0 before:h-2 hover:before:w-[95%] hover:before:left-1
+              href={clsx("http://wa.me/+237690552385?text=", hour >= 16 ? "Bonsoir" : "Bonjour", " monsieur Le-duc. Je viens de visiter votre portfolio et j'aimerais discuter avec vous !")} className="transition-all duration-500 relative w-2/3 h-[50px] bg-transparent mt-2 text-blue-200 border-b-2 border-blue-200 rounded-xl flex justify-center items-center flex-nowrap hover:shadow-sm hover:shadow-blue-200 active:scale-90 before:transition-all before:duration-500 before:absolute before:top-0 before:left-1/2 before:border-t-2 before:border-blue-200 before:rounded-xl before:w-0 before:h-2 hover:before:w-[95%] hover:before:left-1
               " target="_blank">
               Discuter avec moi
             </Link>
@@ -292,7 +300,7 @@ export default function Page() {
 
       <span
         className={clsx(
-          "transition-all duration-500 fixed right-4 bottom-28 text-4xl hover:scale-110 hover:opacity-100 active:scale-90 cursor-pointer z-10",
+          "transition-all duration-500 fixed right-4 sm:bottom-18 bottom-5 text-4xl hover:scale-110 hover:opacity-100 active:scale-90 cursor-pointer z-10",
           position >= windowHeight ? "opacity-50" : "opacity-0"
         )}
         onClick={() => scrollTop()}

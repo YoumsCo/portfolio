@@ -42,7 +42,7 @@ export const Footer = ({ action }: Props) => {
                     "transition-all duration-500 relative w-[100px] sm:h-[100px] h-20 flex justify-center items-center",
                     pathname == "/projects" ? "mr-1" : "mr-4"
                 )}>
-                    <Image src="/Logos/logo-2.jpg" alt="Logo" fill objectPosition="center" className="rounded-full aspect-video cursor-pointer" onClick={() => router.push("/")} />
+                    <Image src="/img/logo.jpg" alt="Logo" fill objectPosition="center" className="rounded-full aspect-video cursor-pointer" onClick={() => router.push("/")} />
                 </div>
 
                 {/* Footer de la page "Accueil" */}
