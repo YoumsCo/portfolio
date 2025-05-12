@@ -252,7 +252,7 @@ export default function Page() {
               <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 2024 - 2025</span>
               <p className="text-bold text-blue-200">Licence en Génie logiciel</p>
               <p>
-                Après ce fameux BTS je me suis dit si j&rsquo;ai déjà un BTS dans le domaine où je prévoyais exercer depuis tout petit, pourquoi ne pas prolonger jusqu&rsquo;à la licence ?
+                Après de mon BTS je me suis dit si j&rsquo;ai déjà un BTS dans le domaine où je prévoyais exercer depuis tout petit, pourquoi ne pas prolonger jusqu&rsquo;à la licence ?
                 <br />Et donc un an plus tard j&rsquo;obtiens ma licence en génie logiciel comme prévu.
               </p>
             </div>
