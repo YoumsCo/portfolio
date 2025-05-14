@@ -1,5 +1,5 @@
 import { MoonLoader } from "react-spinners";
-import { Container } from "./components/container";
+import { Container } from "../components/container";
 
 export default function Loading() {
 
