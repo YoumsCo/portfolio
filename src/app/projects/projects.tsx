@@ -159,7 +159,7 @@ export const Laravel = [
 
 export const Next = [
     {
-        titre: "Projets_List",
+        titre: "Projects_List",
         description: "Plate-forme de plublication de projets en fonction des différents utilisateurs voualant partager ceux ci et avoir des feedback",
         interfaces: [
             {
