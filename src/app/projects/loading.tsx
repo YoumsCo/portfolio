@@ -1,15 +1,15 @@
-import { MoonLoader } from "react-spinners";
-import { Container } from "./components/container";
+Importation. { MoonLoader } from "react-spinners";
+Importation. { Container } from "../composants/conteneur";
 
-export default function Loading() {
+Exportation. Défaut . fonction.   Chargement.() {
 
-    return (
-        <Container className="transition-all duration-500 w-screen h-screen flex flex-col justify-center items-center">
+    Retour. (
+        <Conteneur. className="transition-all duration-500 w-screen h-screen flex flex-col justify-center items-center">
             <MoonLoader
-                color="white"
-                loading={true}
-                size={70}
-                aria-label="Chargement du Spinner"
+                Couleur=
+                loading=chargement = {Vrai.}
+                size=taille = {70}
+                aria-label="Chargement du Spinner"aria-label.... ... = "Chargement du Spinner" 
                 data-testid="loader"
             />
         </Container>
