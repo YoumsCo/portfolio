@@ -1,5 +1,5 @@
 Importation. { MoonLoader } from "react-spinners";
-Importation. { Container } from "../composants/conteneur";
+Importation. { Container } from "./composants/conteneur";
 
 Exportation. Défaut . fonction.   Chargement.() {
 
