@@ -6,7 +6,7 @@ import { FaChevronCircleUp, FaInfoCircle, FaLaravel, FaMobileAlt, FaPhp, FaReact
 import clsx from "clsx";
 import Link from "next/link";
 import { useToggle } from "#/hooks/use-toggle";
-import { FaRoad } from "react-icons/fa6";
+import { FaGithubAlt, FaLinkedinIn, FaRoad } from "react-icons/fa6";
 import { usePathname, useRouter } from "next/navigation";
 
 interface Props {
@@ -164,8 +164,16 @@ export const Footer = ({ action }: Props) => {
 
 
             </div>
+            <div className="transition-all duration-500 w-full flex justify-center items-center gap-10 my-2">
+                <Link href="https://www.linkedin.com/in/youms-c-dev-887275360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="transition-all duration-500 hover:scale-125 active:scale-80">
+                    <FaLinkedinIn className="transition-all duration-500 w-full sm:text-2xl text-lg" />
+                </Link>
+                <Link href="https://github.com/YoumsCo" target="_blank" className="transition-all duration-500 hover:scale-125 active:scale-80">
+                    <FaGithubAlt className="transition-all duration-500 w-full sm:text-2xl text-lg" />
+                </Link>
+            </div>
             <p className="text-blue-200 mt-3 flex justify-center items-center flex-wrap">
-                Copyright &copy; {new Date().getFullYear()} &nbsp;youms&rsquo;s dev
+                Copyright &copy; {new Date().getFullYear()} &nbsp; youms&rsquo;s dev &nbsp; 
                 <Link href="mailto:youmschoco@gmail.com" className="underline hover:text-white">youmschoco@gmail.com</Link>
             </p>
         </Container>

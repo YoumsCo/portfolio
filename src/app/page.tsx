@@ -11,6 +11,9 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "./components/button";
+import { experiences, parcours, skills } from "./infos";
+import cuid from "cuid";
+import { Div } from "./components/div";
 
 export default function Page() {
 
@@ -86,7 +89,7 @@ export default function Page() {
         )
       }
       >
-        <div className="transition-all duration-500 w-full sm:w-1/2 h-full p-3 flex flex-col justify-center items-start gap-1 bg-black bg-opacity-80 sm:bg-none">
+        <div className="transition-all duration-500 w-full sm:w-1/2 h-full p-3 flex flex-col justify-center items-start gap-1 sm:bg-black bg-black/70 bg-opacity-80">
           <h1 className="transition-all duration-500 text-2xl text-left text-blue-200">
             <p className="text-blue-50">
               {
@@ -187,33 +190,20 @@ export default function Page() {
           </div>
 
           <ul className="transition-all duration-500 w-[265px] flex flex-col justify-center items-start gap-6">
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[70%] after:h-[5px] after:bg-blue-200/60">
-              Javascript : <span className="text-blue-200">70%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[70%] after:h-[5px] after:bg-blue-200/60">
-              PHP : <span className="text-blue-200">70%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[50%] after:h-[5px] after:bg-blue-200/60">
-              SQL : <span className="text-blue-200">50%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[50%] after:h-[5px] after:bg-blue-200/60">
-              Typescript : <span className="text-blue-200">70%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[30%] after:h-[5px] after:bg-blue-200/60">
-              Python : <span className="text-blue-200">30%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[60%] after:h-[5px] after:bg-blue-200/60">
-              Laravel : <span className="text-blue-200">60%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[60%] after:h-[5px] after:bg-blue-200/60">
-              React : <span className="text-blue-200">60%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[60%] after:h-[5px] after:bg-blue-200/60">
-              Next.js : <span className="text-blue-200">60%</span>
-            </li>
-            <li className="transition-all duration-500 relative w-full flex justify-between before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[80%] after:h-[5px] after:bg-blue-200/60">
-              Tailwindcss : <span className="text-blue-200">80%</span>
-            </li>
+            {
+              skills.map((child) => {
+                return (
+                  <li key={cuid()} className={
+                    "transition-all duration-500 relative w-full flex justify-between before:transition-all before:duration-500 before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[" + child.percent + "%] after:h-[5px] after:bg-blue-200/60"
+                  }>
+                    {child.technology}
+                    &nbsp;
+                    :
+                    <span className="text-blue-200">{child.percent}%</span>
+                  </li>
+                )
+              })
+            }
           </ul>
 
         </div>
@@ -223,76 +213,49 @@ export default function Page() {
 
       <div className="transition-all duration-500 w-11/12 min-h-[500px] flex flex-wrap sm:flex-nowrap justify-evenly items-start my-20 gap-6">
 
-        <div className="transition-all duration-500 sm:w-1/2 h-full flex flex-col justify-center items-start">
+        <div className="transition-all duration-500 sm:w-1/2 h-full flex flex-col justify-start items-start">
 
           <Title ref={wayRef} className="transition-all duration-500 relative text-blue-200 mb-10 text-2xl">Parcours</Title>
 
-          <div className="transition-all duration-500 bg-gray-900/40 rounded-2xl flex flex-col justify-center items-center">
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 gap-2 before:absolute before:top-0 before:translate-y-[42px] before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[60px] after:left-4 after:w-[2px] after:h-[74%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 2022</span>
-              <p className="text-bold text-blue-200">Baccaloréat D</p>
-              <p>
-                J&rsquo;ai fait mes études secondaires au lycée classique d&rsquo;édéa (Région du littoral), où j&rsquo;ai obtenu mon baccalauréat D avant de m&rsquo;installer à douala-Cameroun pour poursuivre mes études au terciaire.
-              </p>
-            </div>
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 pt-0 gap-2 before:absolute before:top-0 before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[16px] after:left-4 after:w-[2px] after:h-[91%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 2022 - 2024</span>
-              <p className="text-bold text-blue-200">BTS en Génie logiciel</p>
-              <p>
-                Une fois mon baccaloréat obtenu et peu de temps après mon installation dans la ville de douala-Cameroun, je me suis vu poursuivre mes études à l&rsquo;<span className="text-blue-200">I</span>nstitut <span className="text-blue-200">U</span>niversitaire et <span className="text-blue-200">S</span>tratégique de l&rsquo; <span className="text-blue-200">E</span>stuaire (<span className="text-blue-200">IUEs / Insam</span>) de ndokoti, où j&rsquo;ai pu obtenir après deux ans d&rsquo;études mon BTS en génie logiciel.
-              </p>
-            </div>
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 pt-0 gap-2 before:absolute before:top-0 before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[16px] after:left-4 after:w-[2px] after:h-[91%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 2024 - 2025</span>
-              <p className="text-bold text-blue-200">Licence en Génie logiciel</p>
-              <p>
-                Après l&rsquo;obtention de mon BTS dans le domaine où j&rsquo;ai toujours voulu execrer, je me suis dit si j&rsquo;ai déjà un BTS dans le domaine où je prévoyais exercer depuis tout petit, pourquoi ne pas prolonger jusqu&rsquo;à la licence ?
-                <br />Et donc un an plus tard j&rsquo;obtiens ma licence en génie logiciel comme prévu.
-              </p>
-            </div>
+          <div className="transition-all duration-500 bg-gray-900/40 rounded-2xl flex flex-col justify-center items-center p-2 pt-10 text-justify">
+            {
+              parcours.map((child) =>
+              (
+                <Div key={cuid()}>
+                  <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp;
+                    {
+                      child.year && child.year
+                      ||
+                      <span>
+                        {child?.begin} à {child?.end}
+                      </span>
+                    }
+                  </span>
+                  <p className="text-bold text-blue-200">{child.title}</p>
+                  {child.description}
+                </Div>
+              )
+              )
+            }
           </div>
         </div>
-
 
         <div className="transition-all duration-500 sm:w-1/2 h-full flex flex-col justify-start items-start">
 
           <Title ref={expRef} className="transition-all duration-500 relative text-blue-200 mb-10 text-2xl">Expérience</Title>
 
-          <div className="transition-all duration-500 bg-gray-900/40 rounded-2xl flex flex-col justify-center items-center">
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 gap-2 before:absolute before:top-0 before:translate-y-[42px] before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[60px] after:left-4 after:w-[2px] after:h-[80%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 06 - 2023 au 08 - 2023</span>
-              <p className="text-bold text-blue-200">Stage académique à AL-Consulting Sarl</p>
-              <p className="w-full min-h-full">
-                J&rsquo;ai effectué un stage dans l&rsquo;entreprise AL-Consulting Sarl où j&rsquo;ai appris à mieux manier l&rsquo;outil informatique ceci se traduisant par le logiciel qu&rsquo;on utilisait là-bas pour développer les applications de manière efficace à savoir <span className="text-blue-200">Visual studio code.</span> J&rsquo;y ai egalement appris les règles de création et de gestion d&rsquo;une base données avec le langage<span className="text-blue-200">MySQL</span> et aussi l&rsquo;apprentissage à l&rsquo;utilisation des bonnes pratiques dans les langages <span className="text-blue-200">Javascript</span> et <span className="text-blue-200">PHP</span>.
-              </p>
-            </div>
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 pt-0 gap-2 before:absolute before:top-0 before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[16px] after:left-4 after:w-[2px] after:h-[90%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 12 - 2024 au 01 -2025</span>
-              <p className="text-bold text-blue-200">Employé à Soif.</p>
-              <p>
-                Cetres l&rsquo;entreprise <span className="text-blue-200">Soif</span> n&rsquo;exerce pas dans mon domaine (le génie logiciel), mais là-bas j&rsquo;ai eu l&rsquo;occasion d&rsquo;expérimenter ce qu&rsquo;est le monde professionnel et ainsi d&rsquo;améliorer mon savoir-être et mon savoir-faire.
-              </p>
-            </div>
-
-            <div className="transition-all duration-500 relative w-full flex flex-col justify-start items-start text-justify p-10 pt-0 gap-2 before:absolute before:top-0 before:left-2 before:w-[18px] before:h-[18px] before:border-4 before:border-blue-200 before:bg-transparent before:rounded-full after:absolute after:top-0 after:translate-y-[16px] after:left-4 after:w-[2px] after:h-[88%] after:bg-blue-200">
-
-              <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; 01 - 2025 au 03 -2025</span>
-              <p className="text-bold text-blue-200">Stage professionnel à MT Consulting Sarl.</p>
-              <p>
-                A <span className="text-blue-200">MT Consulting Sarl</span> j&rsquo;ai découvert le <span className="text-blue-200">python</span> et par la suite appris à manier quelques modules assez simple de l&rsquo;ERP <span className="text-blue-200">Odoo</span>.
-              </p>
-            </div>
-
+          <div className="transition-all duration-500 bg-gray-900/40 rounded-2xl flex flex-col justify-center items-center p-2 pt-10 text-justify">
+            {
+              experiences.map((child) =>
+              (
+                <Div key={cuid()}>
+                  <span className="transition-all duration-500 flex justify-start items-center gap-2 text-bold text-blue-200"><FaCalendarAlt /> &nbsp; Du {child?.begin} au {child?.end}</span>
+                  <p className="text-bold text-blue-200">{child.title}</p>
+                  {child.description}
+                </Div>
+              )
+              )
+            }
           </div>
         </div>
 

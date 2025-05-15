@@ -8,7 +8,7 @@ export default function Loading() {
             <MoonLoader
                 color="white"
                 loading={true}
-                size={70}
+                size={50}
                 aria-label="Chargement du Spinner"
                 data-testid="loader"
             />

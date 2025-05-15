@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Suspense } from "react";
-import { MoonLoader } from "react-spinners";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Youms's portfolio",
-  description: "Portfolio créé par le développeur web Youmbi Le-duc",
+  description: "Portfolio créé par Youmbi Le-duc développeur full stack",
 };
 
 export default function RootLayout({
@@ -34,17 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense fallback={
-          <MoonLoader
-            color="white"
-            loading={true}
-            size={70}
-            aria-label="Chargement du Spinner"
-            data-testid="loader"
-          />
-        }>
-          {children}
-        </Suspense>
+        {children}
       </body>
     </html>
   );

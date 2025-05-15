@@ -1,7 +1,18 @@
-export const PHP = [
+interface projectType {
+    titre: string;
+    description: string;
+    github?: string;
+    interfaces?: {
+        lien: string;
+        titre: string;
+    }[] 
+}
+
+export const PHP: projectType[] = [
     {
         titre: "GES_LOCATION",
         description: "Application permettant au commun des mortels de pouvoir non seulement trouver un futur logements parmi plusieurs disponibles sur la plateforme mais aussi d&rsquo;en héberger sur la plateforme si jamais le desir de mettre un location un logement se fait ressentir.",
+        github: "https://github.com/YoumsCo/GES_LOCATION",
         interfaces: [
             {
                 lien: "/img/PHP/GES_LOCATION/Inscription.png",
@@ -36,6 +47,7 @@ export const PHP = [
     {
         titre: "E-commerce",
         description: "Petite application faisant office de maquette de site E-commerce.",
+        github: "https://github.com/YoumsCo/E-commerce",
         interfaces: [
             {
                 lien: "/img/PHP/E-commerce/Inscription.png",
@@ -62,6 +74,7 @@ export const PHP = [
     {
         titre: "Wallpapers",
         description: "Petite application web de téléchargements d'images de fond d'écrans.",
+        github: "https://github.com/YoumsCo/Wallpapers",
         interfaces: [
             {
                 lien: "/img/PHP/Galerie/Accueil.png",
@@ -84,6 +97,7 @@ export const PHP = [
     {
         titre: "AgPOO",
         description: "Application web de gestion des réservations des tickets de voyage dans les agences de la ville de douala (Cameroun).",
+        github: "https://github.com/YoumsCo/AgPOO",
         interfaces: [
             {
                 lien: "/img/PHP/AgPOO/Inscription.png",
@@ -106,6 +120,7 @@ export const Laravel = [
     {
         titre: "GES_SALLES",
         description: "Ceci est tout simplement une application permettant de gérer la reservation de salles en ligne pour pouvoir permettre aux différentes personne de pouvoir le faire depuis chez eux et ce peu importe l'emplacement de la salle ou le propriétaire de celle-ci.",
+        github: "https://github.com/YoumsCo/Ges_SALLES",
         interfaces: [
             {
                 lien: "/img/Laravel/GES_SALLES/Inscription.png",
@@ -132,6 +147,7 @@ export const Laravel = [
     {
         titre: "Blog",
         description: "Application web gérant un blog.",
+        github: "https://github.com/YoumsCo/Blog",
         interfaces: [
             {
                 lien: "/img/Laravel/Blog/Inscription.png",
@@ -159,8 +175,14 @@ export const Laravel = [
 
 export const Next = [
     {
+        titre: "Portfolio",
+        description: "C'est tout simplement ce portfolio que vous visitez actuellement",
+        github: "https://github.com/YoumsCo/Portfolio",
+    },
+    {
         titre: "Projects_List",
         description: "Plate-forme de plublication de projets en fonction des différents utilisateurs voualant partager ceux ci et avoir des feedback",
+        github: "https://github.com/YoumsCo/Projects_List",
         interfaces: [
             {
                 lien: "/img/Next/CodersMonkeys/Inscription.png",
@@ -176,49 +198,4 @@ export const Next = [
             },
         ]
     },
-    {
-        titre: "Blog",
-        description: "Application web gérant un blog.",
-        interfaces: [
-            {
-                lien: "/img/Laravel/Blog/Inscription.png",
-                titre: "Interface d'inscription"
-            },
-            {
-                lien: "/img/Laravel/Blog/Connexion.png",
-                titre: "Interface de connexion"
-            },
-            {
-                lien: "/img/Laravel/Blog/Accueil.png",
-                titre: "Accueil"
-            },
-            {
-                lien: "/img/Laravel/Blog/UnArticle.png",
-                titre: "Un article"
-            },
-            {
-                lien: "/img/Laravel/Blog/Commentaires.png",
-                titre: "Espace commentaires"
-            },
-        ]
-    },
-    {
-        titre: "AgPOO",
-        description: "Application web de gestion des réservations des tickets de voyage dans les agences de la ville de douala (Cameroun).",
-        interfaces: [
-            {
-                lien: "/img/PHP/AgPOO/Inscription.png",
-                titre: "Interface d'inscription"
-            },
-            {
-                lien: "/img/PHP/AgPOO/Connexion.png",
-                titre: "Interface de connexion"
-            },
-            {
-                lien: "/img/PHP/AgPOO/Location.png",
-                titre: "Localiser une agence via google map."
-            }
-        ]
-    },
-    
 ];
