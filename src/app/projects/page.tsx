@@ -80,7 +80,7 @@ export default function Projects() {
                                         <span className="w-full flex justify-center items-center sm:gap-2 gap-1 text-nowrap">
                                             <FaRProject className="text-xl" /> Nom du projet :
                                         </span>
-                                        <span className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap">{child.titre}</span>
+                                        <span onClick={() => window.open(child.github, "_blank")} className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap cursor-pointer hover:underline">{child.titre}</span>
                                     </p>
                                     <div>
                                         <span className="flex justify-start items-center gap-2">
@@ -143,7 +143,7 @@ export default function Projects() {
                                         <span className="w-full flex justify-center items-center sm:gap-2 gap-1 text-nowrap">
                                             <FaRProject className="text-xl" /> Nom du projet :
                                         </span>
-                                        <span className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap">{child.titre}</span>
+                                        <span onClick={() => window.open(child.github, "_blank")} className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap cursor-pointer hover:underline">{child.titre}</span>
                                     </p>
                                     <div>
                                         <span className="flex justify-start items-center gap-2">
@@ -206,7 +206,7 @@ export default function Projects() {
                                         <span className="w-full flex justify-center items-center sm:gap-2 gap-1 text-nowrap">
                                             <FaRProject className="text-xl" /> Nom du projet :
                                         </span>
-                                        <span className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap">{child.titre}</span>
+                                        <span onClick={() => window.open(child.github, "_blank")} className="text-blue-200 font-bold text-lg translate-x-6 sm:translate-x-0 sm:text-nowrap cursor-pointer hover:underline">{child.titre}</span>
                                     </p>
                                     <div>
                                         <span className="flex justify-start items-center gap-2">

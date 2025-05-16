@@ -140,7 +140,7 @@ export const Laravel = [
             },
             {
                 lien: "/img/Laravel/GES_SALLES/One.png",
-                titre: "Affichage d&rsquo;une salle"
+                titre: "Affichage d'une salle"
             },
         ]
     },

@@ -193,8 +193,7 @@ export default function Page() {
             {
               skills.map((child) => {
                 return (
-                  <li key={cuid()} className={
-                    "transition-all duration-500 relative w-full flex justify-between before:transition-all before:duration-500 before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[" + child.percent + "%] after:h-[5px] after:bg-blue-200/60"
+                  <li key={cuid()} className={`transition-all duration-500 relative w-full flex justify-between before:transition-all before:duration-500 before:absolute before:-bottom-2 before:left-0 before:w-full before:h-[5px] before:bg-gray-500/40 after:absolute after:-bottom-2 after:left-0 after:w-[${child.percent}%] after:h-[5px] after:bg-blue-200/60`
                   }>
                     {child.technology}
                     &nbsp;
