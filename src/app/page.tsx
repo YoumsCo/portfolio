@@ -14,16 +14,29 @@ import { Button } from "./components/button";
 import { experiences, parcours, skills } from "./infos";
 import cuid from "cuid";
 import { Div } from "./components/div";
+import Typed from "typed.js";
 
 export default function Page() {
 
   const { value } = useToggle();
   const hour = new Date().getHours();
-  const propos = useRef<HTMLHeadingElement | null>(null);
-  const wayRef = useRef<HTMLHeadingElement | null>(null);
-  const expRef = useRef<HTMLHeadingElement | null>(null);
+  const propos = useRef<HTMLHeadingElement>(null);
+  const wayRef = useRef<HTMLHeadingElement>(null);
+  const expRef = useRef<HTMLHeadingElement>(null);
+  const h2Ref = useRef<HTMLHeadingElement>(null);
   const [position, setPosition] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
+
+  useEffect(() => {
+    const typed = new Typed(h2Ref.current, {
+      strings: ['Développeur front-end', 'Développeur back-end', 'Bref ^700', 'Développeur full stack'],
+      typeSpeed: 50,
+    });
+    
+    return () => {
+      typed.destroy();
+    }
+  }, []);
 
   const scrollToPropros = () => {
     window.scrollTo({
@@ -103,7 +116,9 @@ export default function Page() {
               <span className="relative font-['papyrus'] mx-4 before:absolute before:top-0 before:left-0 before:-translate-x-6 before:-translate-y-1 before:w-4 before:h-4 before:border-l-2 before:border-t-2 before:border-blue-200 after:absolute after:bottom-0 after:right-0 after:translate-x-6 after:translate-y-1 after:w-4 after:h-4 after:border-r-2 after:border-b-2 after:border-blue-200">Youmbi Le-duc</span>
             </p>
           </h1>
-          <h2 className="transition-all duration-500 text-xl text-left text-blue-200 font-['papyrus']">Développeur full stack.</h2>
+
+          <h2 ref={h2Ref} className="transition-all duration-500 w-full text-xl text-left text-blue-200 font-['papyrus']"></h2>
+
           <p className="transition-all duration-500 text-justify ">
             Je suis un développeur full stack passionné par la création d&rsquo;applications web. J&rsquo;ai une solide expérience dans le développement d&rsquo;applications front-end et back-end, ainsi que dans la conception de bases de données. Je suis toujours à la recherche de nouveaux défis et d&rsquo;opportunités pour apprendre et grandir en tant que développeur.
           </p>
