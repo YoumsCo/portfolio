@@ -25,7 +25,7 @@ export const skills: Skills[] = [
     },
     {
         technology: "PHP",
-        percent: 70
+        percent: 80
     },
     {
         technology: "SQL",
@@ -37,23 +37,19 @@ export const skills: Skills[] = [
     },
     {
         technology: "Python",
-        percent: 30
+        percent: 20
     },
     {
         technology: "Laravel",
         percent: 60
     },
     {
-        technology: "React",
-        percent: 60
-    },
-    {
         technology: "Next.js",
-        percent: 60
+        percent: 50
     },
     {
         technology: "Tailwindcss",
-        percent: 60
+        percent: 65
     },
 ];
 
